@@ -42,3 +42,13 @@ A full stack cybersecurity web application that detects suspicious and scam URLs
 
 ## Author
 Srushti SR
+## Screenshots
+
+### Home Page
+![Home](screenshots/home.png)
+
+### Scam Detection
+![Scam](screenshots/scam-result.png)
+
+### Safe Detection
+![Safe](screenshots/safe-result.png)

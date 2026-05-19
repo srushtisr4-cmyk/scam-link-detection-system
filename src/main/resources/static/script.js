@@ -19,7 +19,7 @@ async function scanUrl() {
 
     try {
 
-        const response = await fetch("http://localhost:8080/api/scan", {
+        const response = await fetch("https://scam-link-detection-system.onrender.com/api/scan", {
 
             method: "POST",
 

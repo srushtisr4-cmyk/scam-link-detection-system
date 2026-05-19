@@ -1,7 +1,6 @@
 async function scanUrl() {
 
     const url = document.getElementById("urlInput").value;
-
     const resultDiv = document.getElementById("result");
 
     // Empty input check
@@ -13,26 +12,29 @@ async function scanUrl() {
         return;
     }
 
-    // Loading animation
+    // Loading message
     resultDiv.innerHTML =
         "<span style='color:cyan'>🔍 Scanning URL...</span>";
 
     try {
 
-        const response = await fetch("https://scam-link-detection-system.onrender.com/api/scan", {
+        // Correct Backend URL
+        const response = await fetch(
+            "https://scam-link-detection-system-backend.onrender.com/api/scan",
+            {
+                method: "POST",
 
-            method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-            headers: {
-                "Content-Type": "application/json"
-            },
+                body: JSON.stringify({
+                    url: url
+                })
+            }
+        );
 
-            body: JSON.stringify({
-                url: url
-            })
-
-        });
-
+        // Convert response to JSON
         const data = await response.json();
 
         // Scam Result
